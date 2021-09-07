@@ -1,2 +1,2 @@
 # testJenkins
-This is a Jenkins repo to test peipelines
+This is a Jenkins repo to test pipelines
