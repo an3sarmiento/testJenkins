@@ -6,13 +6,15 @@ COPY package.json .
 
 RUN npm install
 
+RUN npm install -g ionic
+
 COPY . .
 
-RUN npm run build
+RUN ionic build --prod
 
 FROM nginx:stable-alpine
 
-COPY --from=build /app/www /usr/share/nginx/html
+COPY --from=build /app/www /usr/share/nginx/html/
 
 COPY nginx.conf /etc/nginx/nginx.conf
 
